@@ -1,50 +1,35 @@
 #include <stdio.h>
-
 int main(void)
 {
-	int d;
-	float mxn, r, usd=.0491, eur=.042, aud=.0687, jpy=5.3877, egp=.7718, ars=.47706;
-	//usd dolar estadounidense
-	//aud dolar australiano
-	//jpy yen japones
-	//egp libra egipcia
-	//ars peso argentino
+	int mxn, d;
+	float r;
+	printf("Digite la cantidad de pesos mxn que desea convertir\n");
+	scanf("%d",&mxn);
 	
-	printf("Conversor de pesos mxn\n"); 
-	printf ("Digite el cnatidad que desea convertir\n");
-	scanf ("%.2f",&mxn);
+	printf("Correccion que desea hacer:\n 1) dolar americano\n 2) euro\n 3) dolar australiano\n 4) yen japones\n 5) libra egipcia\n 6) peso argentino\n");
+	scanf ("%d",&d);
 	
-	printf("Indique su conversion:\n 1) dolar americano\n 2) euro\n 3) dolar australiano\n 4) yen japones\n 5) libra egipcia\n 6) peso argentino\n");
-	scanf("%d",&d);
-
-	scanf("%d",&d);
-	
-	r=0;
-	switch(d)
-	{
-	case 1:
-	 r=(float)mxn*(float)usd;
-	 break;
-	case 2:
-	 r=(float)mxn*(float)eur;
-	 break;
-	case 3:
-	 r=(float)mxn*(float)aud;
-	 break;
-	case 4:
-	 r=(float)mxn*(float)jpy;
-	 break;
-	case 5:
-	 r=(float)mxn*(float)egp;
-	 break;
-	case 6:
-	 r=(float)mxn*(float)ars;
-	 break;
-	default:
-	 printf("Opcion invalido\n");
+	switch(d){
+		case 1:
+			r=mxn*.0495;
+			break;
+		case 2:
+			r=mxn*.042;
+			break;
+		case 3:
+			r=mxn*.0677;
+			break;
+		case 4:
+			r=mxn*5.4355;
+			break;
+		case 5:
+			r=mxn*.7762;
+			break;
+		case 6:
+			r=mxn*4.8228;
+			break;
+		default:
+		 printf("Digito invalido\n");
 	}
-	
-	printf("La equivalencia de su cantidad es: %.2f",r);
-	
-	return 0;
+	printf("Su conversion es: %.2f",r);
 }
